@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Little Magic Between Us — For Patli Kamar 🖤</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pacifico&display=swap');
+
+:root{
+  --bg:#09050a; --bg2:#1a0815; --wine:#4b102b; --rose:#ff6f9f;
+  --hot:#ff3f82; --soft:#ffd9e8; --cream:#fff7fb; --gold:#ffd18a;
+  --glass:#ffffff12; --line:#ffc0d933; --muted:#f6cdddcc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; min-height:100vh; overflow-x:hidden; color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  background:
+    radial-gradient(circle at 18% 12%,#7b1744 0,transparent 28%),
+    radial-gradient(circle at 88% 25%,#4a123e 0,transparent 30%),
+    radial-gradient(circle at 50% 100%,#7d183f 0,transparent 34%),
+    linear-gradient(135deg,#070407,#210a19 42%,#12070e);
+}
+body:before{
+  content:"♡   ✦   ♡   ✧   ♡   ✦   ♡   ✧";
+  position:fixed; inset:-10%; pointer-events:none; z-index:0;
+  color:#ff9ebe20; font-size:2.4rem; letter-spacing:1.4rem;
+  line-height:5rem; transform:rotate(-12deg) scale(1.2);
+}
+.bg{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.p{
+  position:absolute;bottom:-12vh;opacity:0;
+  animation:rise linear infinite;
+  filter:drop-shadow(0 0 10px #ff75ad66);
+}
+@keyframes rise{
+  0%{transform:translateY(0) rotate(0) scale(.7);opacity:0}
+  12%{opacity:.75} 50%{transform:translateY(-55vh) rotate(18deg) scale(1)}
+  100%{transform:translateY(-125vh) rotate(-15deg) scale(1.1);opacity:0}
+}
+.app{width:min(720px,94%);margin:auto;min-height:100vh;padding:28px 0;position:relative;z-index:1}
+.card{
+  position:relative; overflow:hidden; border-radius:34px; padding:34px 25px;
+  text-align:center; min-height:650px;
+  background:linear-gradient(145deg,#ffffff14,#ff9fc510);
+  border:1px solid var(--line);
+  box-shadow:0 24px 90px #000a,0 0 55px #ff5f9f18,inset 0 1px #ffffff35;
+  backdrop-filter:blur(18px);
+}
+.screen{display:none;animation:appear .65s ease}
+.screen.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+h1,h2{font-family:Pacifico,cursive;font-weight:400;line-height:1.35}
+h1{font-size:clamp(2.2rem,8vw,4rem);color:#ffe2ee;text-shadow:0 4px 25px #ff6f9f44}
+h2{font-size:clamp(1.7rem,6vw,2.6rem);color:#ffe2ed}
+p{font-size:1rem;line-height:1.8;color:#ffedf5}
+.script{font-family:Pacifico,cursive;color:#ffabc8;font-size:1.18rem}
+.eyebrow{
+  display:inline-block;padding:7px 13px;border-radius:999px;
+  border:1px solid #ffd1e644;background:#ffffff0d;color:#ffc5da;
+  font-size:.78rem;letter-spacing:.08em;text-transform:uppercase
+}
+button{
+  border:1px solid #ffffff30;border-radius:999px;padding:14px 20px;margin:7px;
+  background:linear-gradient(135deg,#ff9fc3,#ff4f91 58%,#c92f6b);
+  color:white;font-weight:700;font-size:.94rem;cursor:pointer;
+  box-shadow:0 9px 26px #d64c8130;transition:.25s
+}
+button:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 14px 34px #ff75a766}
+button.secondary{background:#ffffff12;box-shadow:none}
+button.gold{background:linear-gradient(135deg,#ffe7ad,#ffc47d,#f18eaf);color:#4c2035}
+button.dark{background:linear-gradient(135deg,#311020,#160914);border-color:#ff9cbe55}
+.reveal{
+  display:none;margin:18px auto 0;padding:19px 18px;max-width:610px;
+  border-radius:22px;background:linear-gradient(135deg,#ffbfd51c,#8d4d8517);
+  border:1px dashed #ffc0d966;box-shadow:inset 0 0 25px #ff9fc50b
+}
+.reveal.show{display:block;animation:appear .45s}
+.note{
+  margin:20px 0;padding:23px;border-radius:24px;
+  background:linear-gradient(135deg,#fff7fb,#ffe4ee);
+  color:#60223e;box-shadow:0 14px 30px #0004;transform:rotate(-.6deg)
+}
+.note p{color:#60223e;margin:8px 0}
+.heart{font-size:4.5rem;animation:pulse 1.5s infinite;filter:drop-shadow(0 0 20px #ff80b7)}
+@keyframes pulse{50%{transform:scale(1.16)}}
+.memory-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin:22px 0}
+.memory{
+  min-height:145px;padding:18px;border-radius:23px;text-align:left;
+  border:1px solid #ffc4da33;background:linear-gradient(145deg,#ffffff10,#ff6f9f09);
+  cursor:pointer;transition:.3s;position:relative;overflow:hidden
+}
+.memory:hover{transform:translateY(-5px);border-color:#ffc4da77}
+.memory .num{font-size:.75rem;color:#ffabc8;letter-spacing:.1em}
+.memory h3{margin:7px 0;font-size:1.05rem;color:#ffe1ec}
+.memory p{font-size:.85rem;line-height:1.55;margin:0;color:#ffdce9}
+.thread{height:4px;background:#ffffff12;border-radius:99px;margin:25px 0;position:relative}
+.thread span{display:block;width:0;height:100%;background:linear-gradient(90deg,#ff4f91,#ffd18a);border-radius:99px;transition:1s}
+.thread:after{content:"♥";position:absolute;top:-14px;left:0;color:#ffb0ca;transition:1s}
+.thread.l1 span{width:22%}.thread.l2 span{width:48%}.thread.l3 span{width:72%}.thread.l4 span{width:100%}
+.thread.l1:after{left:22%}.thread.l2:after{left:48%}.thread.l3:after{left:72%}.thread.l4:after{left:98%}
+.chat{
+  text-align:left;margin:18px auto;max-width:560px
+}
+.bubble{
+  width:fit-content;max-width:85%;padding:13px 16px;margin:9px 0;border-radius:20px;
+  line-height:1.55;font-size:.92rem
+}
+.him{background:#ffffff12;border:1px solid #ffbfd533;border-bottom-left-radius:6px}
+.her{margin-left:auto;background:linear-gradient(135deg,#ff6f9f33,#c44d8625);border:1px solid #ffbfd544;border-bottom-right-radius:6px}
+.tag{
+  display:inline-block;margin:3px;padding:6px 10px;border-radius:999px;
+  background:#ffffff0d;border:1px solid #ffbfd533;color:#ffd3e2;font-size:.78rem
+}
+.locked{
+  border:1px solid #ff9cbe55;border-radius:27px;padding:25px;margin:22px 0;
+  background:radial-gradient(circle at 50% 0,#8e234d22,transparent 65%),#07040755;
+  box-shadow:inset 0 0 40px #ff3f8210
+}
+.lock{font-size:2.5rem}
+.bigline{font-size:1.3rem;color:#ffd6e5;line-height:1.7}
+.signature{font-family:Pacifico,cursive;color:#ffb0ca;font-size:1.25rem}
+.footer{font-size:.8rem;color:#ffd1e188;margin-top:25px}.nav{display:flex;justify-content:center;gap:8px;margin-top:24px}.nav button{padding:10px 16px;font-size:.82rem;background:#ffffff0c;border:1px solid #ffc0d944;box-shadow:none;color:#ffd7e5}.nav button:hover{transform:translateY(-2px);box-shadow:0 8px 20px #ff75a733}
+.final-heart{
+  width:150px;height:150px;margin:25px auto;display:grid;place-items:center;
+  border-radius:50%;background:radial-gradient(circle,#ff8db722,#ff3f8208 60%,transparent);
+  box-shadow:0 0 70px #ff4f9130;animation:glow 2.2s infinite
+}
+.final-heart span{font-size:5rem}
+@keyframes glow{50%{transform:scale(1.06);box-shadow:0 0 100px #ff4f9145}}
+@media(max-width:560px){
+  .card{padding:28px 17px;min-height:620px}
+  .memory-grid{grid-template-columns:1fr}
+  .bubble{max-width:92%}
+}
+
+.routine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:28px 0}.routine-card{padding:24px 18px;min-height:190px;border:1px solid #e7bb7245;border-radius:22px;background:linear-gradient(145deg,#ffffff0a,#16070ee8);cursor:pointer;transition:.25s}.routine-card:hover{transform:translateY(-5px);border-color:#e7bb72aa;box-shadow:0 18px 45px #0008}.routine-card .icon{font-size:2rem;margin-bottom:8px}.routine-card h3{margin:7px 0 9px}.routine-card p{font-size:.96rem;color:#d9b9c4;margin:0}.routine-detail{display:none;text-align:left;margin:18px auto;padding:22px;max-width:760px;border:1px solid #ff719d55;border-radius:20px;background:linear-gradient(145deg,#180810f5,#300b1cf0);box-shadow:0 18px 50px #0008}.routine-detail.show{display:block;animation:appear .45s ease}.routine-detail p{margin:8px 0}.routine-line{font-size:1.25rem;line-height:1.7;color:#ffe7ef}.day-path{display:flex;align-items:center;justify-content:center;gap:8px;margin:25px auto;color:#e7bb72;flex-wrap:wrap}.day-dot{width:10px;height:10px;border-radius:50%;background:#e7bb72;box-shadow:0 0 14px #e7bb72}.day-dash{width:38px;height:1px;background:#e7bb7255}@media(max-width:600px){.routine-grid{grid-template-columns:1fr}.routine-card{min-height:150px}}
+</style>
+</head>
+<body>
+
+<div class="bg" aria-hidden="true">
+  <span class="p" style="left:5%;font-size:1.8rem;animation-duration:13s">💗</span>
+  <span class="p" style="left:16%;font-size:1.2rem;animation-duration:10s;animation-delay:2s">♡</span>
+  <span class="p" style="left:29%;font-size:1.6rem;animation-duration:15s;animation-delay:5s">🌹</span>
+  <span class="p" style="left:42%;font-size:1.3rem;animation-duration:11s;animation-delay:1s">✦</span>
+  <span class="p" style="left:54%;font-size:1.8rem;animation-duration:16s;animation-delay:4s">🦋</span>
+  <span class="p" style="left:67%;font-size:1.4rem;animation-duration:12s;animation-delay:7s">♥</span>
+  <span class="p" style="left:79%;font-size:1.7rem;animation-duration:14s;animation-delay:3s">🌹</span>
+  <span class="p" style="left:91%;font-size:1.3rem;animation-duration:17s;animation-delay:8s">♡</span>
+</div>
+
+<div class="app">
+<div class="card">
+
+<section class="screen active" id="s1">
+  <div class="eyebrow">A new little chapter 🌙</div>
+  <div class="heart">🖤</div>
+  <div class="script">Panda noticed something...</div>
+  <h1>The Little Magic Between Us</h1>
+  <p>Something feels magical, Jaannuuu💗</p>
+  <p>Not fixed. Not perfect. Not completely back to where we once were.</p>
+  <p>Just... <strong>a little magical.</strong></p>
+  <button onclick="next(2)">Touch Me 🥺</button>
+  <div class="footer">For My Patli Kamar My Buddhu — from your still-ridiculously-clingy-cute Panda(Sid) 🐼💗</div>
+</section>
+
+<section class="screen" id="s2">
+  <div class="eyebrow">The first little sign 💌</div>
+  <h2>You started staying.</h2>
+  <p>Maybe it wasn't one giant moment.</p>
+  <p>Maybe it was just another message. Then another conversation. Then one more minute you didn't have to give me... to where I you slept on call, cute 💗</p>
+  <div class="note">
+    <p><strong>And Panda noticed.</strong></p>
+    <p>You don't have to promise me everything for me to see that you're trying. I can see it in the little things... well it's not little for me.</p>
+  </div>
+  <button onclick="reveal('r2')">What little things? 👀</button>
+  <div class="reveal" id="r2">The way you talk a little more. The way you tease me again. The way you let a conversation continue instead of ending it. The way let yourself talk. The way some moments feel almost... perfectly magical and familiar again. 💗</div>
+  <button onclick="next(3)">Keep going 🌷</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s3">
+  <div class="eyebrow">A very serious Panda problem 😤</div>
+  <h2>Small texts. Huge effect.</h2>
+  <p>You probably don't realize how much your smallest messages can do to me.</p>
+  <div class="chat">
+    <div class="bubble him">“Heyyy.”</div>
+    <div class="bubble her">“Hiieee”</div>
+    <div class="bubble him">“ {Waving my hand with joy} Just wanted to talk to you.” 🥺</div>
+  </div>
+  <div class="note">
+    <p>Everytime, a tiny text from you somehow makes everything feel good... my BP says it all for me.</p>
+    <p><strong>You just being there takes a lot of weight off me and I want to be the same for you... yes a very small promise.</strong></p>
+  </div>
+  <button onclick="reveal('r3')">And then the aftereffect on Panda 😭</button>
+  <div class="reveal" id="r3">Because one little conversation makes me want another. And another. And suddenly I'm checking my phone everytime a notification pops up like a hopeless idiot because maybe My Patli Kamar will text again. 🐼💗</div>
+  <button onclick="next(4)">Dangerously cute side effects... 😭</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s4">
+  <div class="eyebrow">The side effect of talking to you 🌙</div>
+  <h2>I keep falling a little more.</h2>
+  <p>That's the cute annoying part👉🏻👈🏻🥹.</p>
+  <p>The more we talk, the more I remember why talking to you felt so easy in the first place.</p>
+  <div class="memory-grid">
+    <div class="memory" onclick="openMemory(this,'01')"><div class="num">01</div><h3>The nonsense</h3><p>Our completely unnecessary conversations.</p></div>
+    <div class="memory" onclick="openMemory(this,'02')"><div class="num">02</div><h3>The teasing</h3><p>That little attitude you know I secretly love.</p></div>
+    <div class="memory" onclick="openMemory(this,'03')"><div class="num">03</div><h3>The softness</h3><p>When the jokes suddenly turn into affection.</p></div>
+    <div class="memory" onclick="openMemory(this,'04')"><div class="num">04</div><h3>The late nights</h3><p>When somehow “goodnight” keeps getting delayed.</p></div>
+  </div>
+  <div class="thread" id="thread4"><span></span></div>
+  <div class="reveal" id="memoryReveal"></div>
+  <button onclick="next(5)">There's another kind of moment... 🖤</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s5">
+  <div class="eyebrow">Restricted memory 🔒</div>
+  <h2>The conversations that got... personal.</h2>
+  <div class="locked">
+    <div class="lock">🔒</div>
+    <p class="bigline">Some conversations are sweet.</p>
+    <p class="bigline">Some are romantic.</p>
+    <p class="bigline">And then there are the ones where the distance between two people somehow feels very, very small.</p>
+    <p>Those private little moments where teasing becomes tension, tension becomes intimacy, and neither of us is pretending it's completely innocent anymore. 😏🖤</p>
+  </div>
+  <button onclick="reveal('r5')">Open the restricted memory 👀</button>
+  <div class="reveal" id="r5">
+    <p><strong>Memory unlocked.</strong></p>
+    <p>That intensity. The anticipation. The way a few words can make both of us suddenly pay much closer attention.</p>
+    <p>And yes, Panda absolutely loves that feeling when it's mutual, playful, private, and ours. 🖤</p>
+  </div>
+  <button onclick="next(6)">Okay... now the soft part 🥺</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s6">
+  <div class="eyebrow">After the teasing 💗</div>
+  <h2>And somehow, you still make me soft.</h2>
+  <p>That's what gets me.</p>
+  <p>We can tease each other, flirt, make a conversation dangerously intense...</p>
+  <p>and then suddenly you're just <strong>you</strong> again.</p>
+  <div class="note">
+    <p>The gurl who can make Panda grin at his screen.</p>
+    <p>The gurl whose random little words can make a difficult day feel lighter.</p>
+    <p>The gurl he wants to tell the stupidest things to.</p>
+  </div>
+  <button onclick="reveal('r6')">Sid's confession 🤍</button>
+  <div class="reveal" id="r6">I don't only miss the intense moments. I miss the quiet ones too. The “are you okay?”, “kya kr rhe?” , the random updates, the silly jokes, the sleepy conversations, the tiny affection. I miss <em>all of you.</em></div>
+  <button onclick="next(7)">There's something Panda wants you to know...</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s7">
+  <div class="eyebrow">I see you. 🌷</div>
+  <h2>We're not completely on the same page.</h2>
+  <p>And I'm not going to pretend we are.</p>
+  <p>Maybe you're still figuring out what you feel. Maybe you're taking things slowly. Maybe some parts of what happened still sit between us.</p>
+  <div class="note">
+    <p><strong>But I see your effort, Buddhhhuuu 🌹.</strong></p>
+    <p>I notice when you reach out. I notice when you stay. I notice when you let yourself be close to me again.</p>
+    <p>Even if we're not standing in exactly the same place yet, I can see that you're taking little steps.</p>
+  </div>
+  <p class="script">And I don't take those little steps for granted.</p>
+  <button onclick="next(8)">Now let Your Buddhhuu admit something embarrassing 😭</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s8">
+  <div class="eyebrow">Panda has become a problem 🐼</div>
+  <h2>I'm getting ridiculously clingy again.</h2>
+  <p>One conversation with you is apparently never enough.</p>
+  <div class="memory-grid">
+    <div class="memory" onclick="reveal('c1')"><div class="num">CLINGY #1</div><h3>“Are you still there?”</h3><p>Because Panda suddenly doesn't want the conversation to end.</p></div>
+    <div class="memory" onclick="reveal('c2')"><div class="num">CLINGY #2</div><h3>“Tell me more.”</h3><p>Because somehow everything you say makes me want more of you.</p></div>
+    <div class="memory" onclick="reveal('c3')"><div class="num">CLINGY #3</div><h3>“I miss you.”</h3><p>Even five minutes later. Yes, it's that bad.</p></div>
+    <div class="memory" onclick="reveal('c4')"><div class="num">CLINGY #4</div><h3>“Stay a little.”</h3><p>Not forever. Just a little longer tonight.</p></div>
+  </div>
+  <div class="reveal" id="c1">“Don't go yet.” 🥺</div>
+  <div class="reveal" id="c2">“No, no, continue. I was listening.” 👀</div>
+  <div class="reveal" id="c3">“Yes, I know we literally just talked. Let me be dramatic.” 😭💗</div>
+  <div class="reveal" id="c4">“I just like having you here.” 🐼</div>
+  <button onclick="next(9)">And then there are the moments I replay... 🌙</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s9">
+  <div class="eyebrow">Little magic archive ✨</div>
+  <h2>The moments that sneak back into my head.</h2>
+  <p>Not because I want to live in the past.</p>
+  <p>Because some moments remind me why this still means a lot.</p>
+  <div class="memory-grid">
+    <div class="memory" onclick="reveal('m1')"><div class="num">MAGIC 01</div><h3>That one laugh</h3><p>When everything suddenly felt easy again.</p></div>
+    <div class="memory" onclick="reveal('m2')"><div class="num">MAGIC 02</div><h3>That look in your words</h3><p>When I could practically hear you smiling.</p></div>
+    <div class="memory" onclick="reveal('m3')"><div class="num">MAGIC 03</div><h3>That late-night energy</h3><p>When neither of us wanted to be the first to leave.</p></div>
+    <div class="memory" onclick="reveal('m4')"><div class="num">MAGIC 04</div><h3>That quiet “us” feeling</h3><p>When the distance almost disappeared.</p></div>
+  </div>
+  <div class="reveal" id="m1">I missed hearing that kind of happiness between us. 🥺</div>
+  <div class="reveal" id="m2">You know exactly how to get under Panda's skin... and somehow make him smile while doing it. 😏</div>
+  <div class="reveal" id="m3">Those conversations where “goodnight” became a completely theoretical concept. 🌙</div>
+  <div class="reveal" id="m4">For a little while, there was no distance. Just you and me talking like we had never stopped. 💗</div>
+  <button onclick="next(10)">One last thing, Patli Kamar...</button>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s10">
+  <div class="eyebrow">From your Panda 🐼</div>
+  <div class="final-heart"><span>💗</span></div>
+  <h2>Maybe this is what finding our way back looks like.</h2>
+  <p>Not one giant promise.</p>
+  <p>Not pretending nothing happened.</p>
+  <p>Just little messages.</p>
+  <p>Little laughs.</p>
+  <p>Little moments of flirting, softness, closeness, and that spark that still knows how to find us.</p>
+  <div class="note">
+    <p><strong>I see you trying.</strong></p>
+    <p>I see the little steps, even when we're not completely on the same page.</p>
+    <p>And if I'm being completely honest...</p>
+    <p><strong>the more of you I get, the more of you I want.</strong> 🥺</p>
+  </div>
+  <p class="bigline">So yes, Sid misses you.</p>
+  <p class="bigline">Yes, Panda is clingy.</p>
+  <p class="bigline">Yes, Sid loves the butterflies, the teasing, the softness, and the little dangerous sparks between us.</p>
+  <p class="bigline"><strong>But most of all, Sid just likes having his Patli Kamar close again.</strong> 🖤</p>
+  <button class="gold" onclick="reveal('final')">Come here, jaanuuu 🥺</button>
+  <button onclick="next(11)">Now imagine an ordinary day with me... ☀️🌙</button>
+  <div class="reveal" id="final">
+    <p class="signature">Then stay a little longer.</p>
+    <p>No pressure. No pretending. Just one more conversation, one more laugh, one more little magical moment.</p>
+    <p>And maybe... we see where the next one takes us. 🌙🖤</p>
+  </div>
+  <div class="footer">— Panda, who is very obviously still hopelessly fond of Patli Kamar 🐼💗</div>
+<div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+<section class="screen" id="s11">
+  <div class="eyebrow">A day that feels like us ☀️🌙</div>
+  <h2>Not a schedule. Just little pieces of a day that become ours.</h2>
+  <p>I'm not imagining some perfectly timed routine where everything goes exactly right.</p>
+  <p>I'm imagining something much simpler: waking up and finding each other, disappearing into our own days, and somehow always finding little ways back.</p>
+
+  <div class="day-path"><span>☀️</span><span class="day-dot"></span><span class="day-dash"></span><span class="day-dot"></span><span class="day-dash"></span><span class="day-dot"></span><span class="day-dash"></span><span class="day-dot"></span><span class="day-dash"></span><span class="day-dot"></span><span>🌙</span></div>
+
+  <div class="routine-grid">
+    <div class="routine-card" onclick="reveal('routine1')"><div class="icon">☀️</div><div class="num">01 · WHEN WE WAKE UP</div><h3>Wish You Good Morning.</h3><p>Sleepy messages, little updates, and that first tiny connection.</p></div>
+    <div class="routine-card" onclick="reveal('routine2')"><div class="icon">🌸</div><div class="num">02 · MORNING → NOON</div><h3>Carry ourselves along.</h3><p>Busy days, random texts, jokes, and tiny check-ins.</p></div>
+    <div class="routine-card" onclick="reveal('routine3')"><div class="icon">🖤</div><div class="num">03 · NOON → EVENING</div><h3>Come back between things.</h3><p>A lazy afternoon telling our stories, and conversations that keep growing.</p></div>
+    <div class="routine-card" onclick="reveal('routine4')"><div class="icon">🌹</div><div class="num">04 · EVENING → DINNER</div><h3>Slow down together.</h3><p>Tell me everything. Laugh about nothing. Feel closer again.</p></div>
+    <div class="routine-card" onclick="reveal('routine5')"><div class="icon">🌙</div><div class="num">05 · AFTER DINNER</div><h3>Stay a little longer.</h3><p>The long talks, softness, flirting, comfort, and not wanting goodnight yet.</p></div>
+  </div>
+
+  <div class="routine-detail" id="routine1"><p class="routine-line"><strong>When we wake up...</strong></p><p>Maybe one of us wakes first texts Good Morning waiting for the other to wake up. Maybe we're both half-asleep. It doesn't really matter. I just like the idea of that first little “good morning” finding its way between us.</p><p>A sleepy text. A random picture. A “did you sleep properly?” And suddenly the day has started with a little piece of you in it. Then we move on with breakfast and come back soon. 🥺</p></div>
+  <div class="routine-detail" id="routine2"><p class="routine-line"><strong>Morning until noon...</strong></p><p>We both have our own things to do, but somehow there are always tiny spaces where we find each other. Maybe being in call sharing our screen and yes I want to share my screen when I do my work or study.</p><p>“What are you doing?” “Look at this.” “Guess what happened.” Something stupid makes us laugh. Something small gets shared. And even when the day is busy, it doesn't feel completely separate because you're still somewhere in it. 🌸</p></div>
+  <div class="routine-detail" id="routine3"><p class="routine-line"><strong>Noon into evening...</strong></p><p>This is where Panda starts missing you properly. 😭</p><p>We talk about how the day is going, complain about things, tell stories, tease each other, flirt a little, and sometimes accidentally turn a normal conversation into one neither of us wants to end.</p><p>The more we talk, the more I fall back into that feeling of simply wanting <em>more of you</em>.And we dont fail to motivate each other with our studies and work.</p></div>
+  <div class="routine-detail" id="routine4"><p class="routine-line"><strong>Evening into dinner...</strong></p><p>The day finally starts slowing down. This is the part where I'd want to hear everything — the boring stuff, the funny stuff, the things you were thinking about but almost forgot to tell me.</p><p>We laugh. We annoy each other. We get soft again. And somewhere between all those little conversations, the distance feels a little less important. We watch something later togehter or listen songs find ways to connect again. 🌹</p></div>
+  <div class="routine-detail" id="routine5"><p class="routine-line"><strong>After dinner...</strong></p><p>This would probably be Panda's favourite part.</p><p>Maybe continue watch something which then shifts to long conversations. Random affection. Comfort. Flirting. Maybe those private little moments where the mood gets more intense and the rest of the world disappears for a while. 🖤</p><p>And then somehow “goodnight” keeps getting postponed because neither of us really wants to be the first one to leave. Sleep on call watching me smile and kissing the screen and I will always ask you to doze off first and I love it.</p><p><strong>Just stay a little longer, Jaanuuu. 🌹💗</strong> 🌙</p></div>
+
+  <div class="note">
+    <p><strong>I don't want a perfect routine with you.</strong></p>
+    <p>I want the ordinary pieces — waking up, getting busy, checking in, laughing, missing each other, coming back, talking too much, getting soft, getting playful, and ending the day knowing we were part of each other's little world.</p>
+    <p class="bigline">Because maybe that's what “us” really is:</p>
+    <p class="script">not one perfect moment... but a whole day made out of little ones. 💗</p>
+  </div>
+  <div class="nav"><button class="secondary" onclick="back()">← Back</button></div>
+</section>
+
+</div>
+</div>
+
+<script>
+let currentScreen = 1;
+const screenHistory = [];
+function showScreen(n){
+  const target=document.getElementById('s'+n);
+  if(!target)return;
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  target.classList.add('active'); currentScreen=n;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function next(n){ if(n===currentScreen)return; screenHistory.push(currentScreen); showScreen(n); }
+function back(){ if(screenHistory.length) showScreen(screenHistory.pop()); }
+function reveal(id){
+  const el=document.getElementById(id);
+  if(el)el.classList.add('show');
+}
+let memoryCount=0;
+function openMemory(card,num){
+  const revealBox=document.getElementById('memoryReveal');
+  const messages={
+    '01':'The nonsense: I love how we can talk about the most pointless things and somehow I still end up smiling at my screen. With you, I want to so the stupid things silly conversations just thinking my buddhhuu will smile, even the stupid conversations feel like little pieces of us. 🐼💗',
+    '02':'The teasing: That little attitude of yours gets me every time. You know exactly how to make me little mad, make me laugh as well, and then somehow make me want to stay in the conversation even longer I love the roller coaster of emotions. 😭😏💗',
+    '03':'The softness: Sometimes the teasing fades and suddenly it is just us being gentle and warm with each other. Those little affectionate moments make everything feel warmer, safer, and a little more like home. 🥺💗',
+    '04':'The late nights: The dangerous little “chalo ab sote good night” that somehow becomes another hour another hour of me asking you to sleep saying its fine. We keep talking, keep laughing, keep finding things to say because neither of us really wants the night to end until eventyally one of us sleeps and oh the peace when I see you sleeping before me. 🌙💗'
+  };
+  revealBox.textContent=messages[num]||'Every little moment adds another knot to the thread. 🧵💗';
+  revealBox.classList.add('show');
+
+  // The bar is a progression: once a step is reached, it never moves backwards.
+  const step=parseInt(num,10);
+  if(step>memoryCount) memoryCount=step;
+  const thread=document.getElementById('thread4');
+  if(thread){
+    thread.className='thread '+(memoryCount ? 'l'+memoryCount : '');
+  }
+
+  card.style.borderColor='#ffb7d2aa';
+  card.style.boxShadow='0 0 24px #ff5f9f20';
+}
+</script>
+</body>
+</html>
